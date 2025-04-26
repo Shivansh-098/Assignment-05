@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class LinearSearch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input array size
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+        // Input array elements
+        int[] array = new int[size];
+        System.out.println("Enter " + size + " elements:");
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Input the element to search
+        System.out.print("Enter the element to search for: ");
+        int key = scanner.nextInt();
+
+        // Linear Search
+        int index = -1; // If element not found, index remains -1
+        for (int i = 0; i < size; i++) {
+            if (array[i] == key) {
+                index = i;
+                break;
+            }
+        }
+
+        // Output
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index " + index);
+        } else {
+            System.out.println("Element " + key + " not found in the array.");
+        }
+
+        scanner.close();
+    }
+}
+
+Output:
+Enter the size of the array: 5
+Enter 5 elements:
+12
+45
+23
+67
+89
+Enter the element to search for: 67
+Element 67 found at index 3
